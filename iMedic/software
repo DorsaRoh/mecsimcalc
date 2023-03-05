@@ -46,6 +46,7 @@ import matplotlib.colors as colors
 import matplotlib.cm as cmx
 import matplotlib as mpl
 import os
+
 def plt_show(plt, width, dpi=100):
     bytes = io.BytesIO()
     plt.savefig(bytes, format='png', dpi=dpi)
@@ -55,6 +56,7 @@ def plt_show(plt, width, dpi=100):
     base64_string = "data:image/png;base64," + \
         base64.b64encode(bytes.getvalue()).decode("utf-8")
     return "<img src='" + base64_string + "' width='" + str(width) + "'>"
+    
 def main(inputs):
     
     if(inputs['disease']=='Brain Cancer Detection — Human + Mammal'):
